@@ -6,6 +6,31 @@
 class Blog_Extract extends WP_CLI_Command {
 
 	/**
+	 * Blog extract alias
+	 *
+	 * ## OPTIONS
+	 *
+	 * <blog-id>
+	 * : ID of blog to extract
+	 *
+	 * [--exclude-archive]
+	 * : Exclude file archive
+	 *
+	 * [--exclude-db]
+	 * : Exclude db export
+	 *
+	 * [--v]
+	 * : Verbose
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     wp extract 3
+	 */
+	function __invoke( $args, $assoc_args ) {
+		$this->blog( $args, $assoc_args );
+	}
+
+	/**
 	 * Blog extract
 	 *
 	 * ## OPTIONS
