@@ -1,21 +1,31 @@
-Blog Extractor ![travis-badge](https://travis-ci.org/trepmal/blog-extractor.svg?branch=master)
-==============
+# Blog Extractor [![travis-badge](https://travis-ci.org/trepmal/blog-extractor.svg?branch=master)](https://travis-ci.org/trepmal/blog-extractor)
 
 
-#### Warning!
+
+## Warning!
 
 This has had limited testing so far and there may be bugs. Would love feedback from those willing to test this out. *There should be no risk to the multisite. In fact, no changes are made to the multisite. But, you know, gremlins.*
 
-#### Installation
+## Installation
 
-Install and activate as a normal plugin. Then run `wp help extract` to confirm the command availability.
+### As Package
 
----
+This is the easiest. It will also make the command available anywhere `wp` is.
+
+`wp package install trepmal/blog-extractor`
+
+### As Standard Plugin
+
+You can also install this command as a standard WordPress plugin, however that means the command will only be available for that WordPress installation where the plugin is active.
+
+`wp plugin install https://github.com/trepmal/blog-extractor/archive/master.zip --activate-network`
+
+## Usage
 
 Extract a single blog from a multisite network. (Does not delete original site)
 
 ```
-wp extract blog <id>
+wp extract <id>
 ```
 
 Creates an tar file in the WordPress root directory. Tar file contains:
@@ -42,7 +52,7 @@ In setting up the standalone site, a few things need to be done:
 Example, if you run
 
 ```
-$ wp extract blog 100
+$ wp extract 100
 ```
 You'd get something like
 
